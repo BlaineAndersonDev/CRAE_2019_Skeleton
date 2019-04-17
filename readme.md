@@ -1,13 +1,20 @@
 # Skyward Therapies
-##### Built using Create-React-App.
+> This App serves as a starting point with instruction for aspiring developers using the CRAE  stack (create-react-app-express) & uses the following technologies by its completion.
+
+| Dependencies | Command |
+| --- | --- |
+| [Yarn](https://github.com/yarnpkg/yarn) | [ReactJS](https://reactjs.org/) |
+| [Create-React-App](https://github.com/facebook/create-react-app) | [Express](https://expressjs.com/) |
+| [Nodemon](https://nodemon.io/) | [PostgreSQL](https://www.postgresql.org/) |
+| [Knex](https://knexjs.org/) | [Dotenv](https://github.com/motdotla/dotenv#readme) |
+| [@babel](https://babeljs.io/) | [name](https) |
+| [name](https) | [name](https) |
 
 ## Initial Creation:
 
   * ### Make sure the Basics are installed (Required Homebrew):
-    | Dependencies | Command |
-    | --- | --- |
-    | [Yarn](https://github.com/yarnpkg/yarn) | `brew install yarn` |
-    | [Create-React-App](https://reactjs.org/) | `yarn add create-react-app` |
+    * [Yarn](https://github.com/yarnpkg/yarn) `brew install yarn`
+    * [Create-React-App](https://github.com/facebook/create-react-app) `yarn add create-react-app`
 
   * ### Project Directory Setup:
 
@@ -117,7 +124,33 @@
 
         * In the server directory create a file called `.babelrc` and paste this in:
           * `{ "presets": ["@babel/preset-env"] }`
-          * This "preset" is what allows for a majorrity of ES6 to ES5 conversions.
+          * This "preset" is what allows for a majority of ES6 to ES5 conversions.
+
+        * In the server directory create another file called `.gitignore` and paste this in:
+          ```
+          # dependencies
+          *node_modules/*
+          /.pnp
+          .pnp.js
+
+          # testing
+          /coverage
+
+          # production
+          /build
+
+          # misc
+          .DS_Store
+          .env.local
+          .env.development.local
+          .env.test.local
+          .env.production.local
+
+          npm-debug.log*
+          yarn-debug.log*
+          yarn-error.log*
+          node_modules/
+          ```
 
         * In server.js paste the following in:
         ```
