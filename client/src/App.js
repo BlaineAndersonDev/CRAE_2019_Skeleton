@@ -1,28 +1,36 @@
+// Import React and allow it to extend Components.
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// Import the css file.
 import './App.css';
 
+// Create the Class 'App' and allow it to be called as a component from other parts of the client. I.E. index.js.
 class App extends Component {
+  state = {messages: []}
+
+  async componentDidMount() {
+
+    const response = await fetch('/bob')
+    .then(response => {
+        return response.json()
+    });
+    console.log('Messages: ' + response)
+    console.log('Messages: ' + Object.keys(response))
+    await this.setState({messages: response})
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <ul>
+          {this.state.messages.map( message => {
+            return <li key={message.id}>{message.message}</li>
+          })}
+        </ul>
       </div>
     );
-  }
-}
+  };
+
+};
+
 
 export default App;

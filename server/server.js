@@ -11,9 +11,14 @@ app.use(express.urlencoded({extended: false}))
 // A very simple Router to allow us to get information from our server/API.
 const router = express.Router()
 // Loading localhost:3001/ will direct you to this root '/' route.
-router.get('/', (req, res) => {
+router.get('/bob', (req, res) => {
   // Here we create a variable named 'helloWorld' that holds an object.
-  const helloWorld = {message: 'Hello World!', successRatePercentage: 100}
+  const helloWorld = [
+    {id: 1, message: 'Hello World!'},
+    {id: 2, message: 'This is pretty cool.'},
+    {id: 3, message: 'You got this working!'},
+    {id: 4, message: 'Amazing job!'}
+  ]
   // We return the object in JSON to the calling point (Our browser).
   res.json(helloWorld)
 })

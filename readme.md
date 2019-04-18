@@ -1,20 +1,20 @@
 # Skyward Therapies
 > This App serves as a starting point with instruction for aspiring developers using the CRAE  stack (create-react-app-express) & uses the following technologies by its completion.
 
-| Dependencies | Command |
+|  |  |
 | --- | --- |
 | [Yarn](https://github.com/yarnpkg/yarn) | [ReactJS](https://reactjs.org/) |
 | [Create-React-App](https://github.com/facebook/create-react-app) | [Express](https://expressjs.com/) |
 | [Nodemon](https://nodemon.io/) | [PostgreSQL](https://www.postgresql.org/) |
 | [Knex](https://knexjs.org/) | [Dotenv](https://github.com/motdotla/dotenv#readme) |
-| [@babel](https://babeljs.io/) | [name](https) |
+| [@babel](https://babeljs.io/) | [react-router-dom](https://github.com/ReactTraining/react-router#readme) |
 | [name](https) | [name](https) |
 
 ## Initial Creation:
 
   * ### Make sure the Basics are installed (Required Homebrew):
     * [Yarn](https://github.com/yarnpkg/yarn) `brew install yarn`
-    * [Create-React-App](https://github.com/facebook/create-react-app) `yarn add create-react-app`
+    * [Create-React-App](https://github.com/facebook/create-react-app) `yarn global add create-react-app`
 
   * ### Project Directory Setup:
 
@@ -51,7 +51,24 @@
     * There are a number of changes we will need to make to both our client and server directories and files. There are less things to update in client, so we will begin there.
 
   * ### Client Updates:
-    * We will need to add a proxy to the client. This allows the client to communicate with the server API runnning locally.
+    * First we will need to add a basic router to the frontend, allowing us to effectively navigate through all the Components we might need.
+      * Navigate to your client directory in the terminal & install it with yarn:
+        * `yarn add react-router-dom`
+      * Now we will clean up the starting point for our App by pasting the following code into index.js in the client directory.
+      ```
+      import React from 'react';
+      import { render } from 'react-dom';
+      import { BrowserRouter } from 'react-router-dom';
+      import App from './App.js';
+      import './index.css';
+
+      render((
+          <BrowserRouter>
+              <App/>
+          </BrowserRouter>
+      ), document.getElementById('root'));
+      ```
+    * We will also need to add a proxy to the client. This allows the client to communicate with the server API running locally.
     * Add `"proxy": "http://localhost:3001"` to the client `package.json`. I.E.:
       * *Note: While the port does not have to be 3001, it's conventional that the client runs on port 3000 and the server on port 3001.*
     ```
@@ -82,7 +99,7 @@
     * *My example removes the `eslintConfig` section of `package.json`. It won't hurt to leave it in, but i've personally never needed them.*
 
     #### **Check your progress:**
-      * Navigate to the client directory and use `yarn start` to check. If it loads a page in your browser and states something like *this* in your terminal then its good to go:
+      * In your terminal navigate to the client directory and use `yarn start` to check. If it loads a page in your browser and states something like *this* in your terminal then its good to go:
       ```
       Compiled successfully!
 
@@ -169,7 +186,12 @@
         // Loading localhost:3001/ will direct you to this root '/' route.
         router.get('/', (req, res) => {
           // Here we create a variable named 'helloWorld' that holds an object.
-          const helloWorld = {message: 'Hello World!', successRatePercentage: 100}
+          const helloWorld = [
+            {message: 'Hello World!'},
+            {message: 'This is pretty cool.'},
+            {message: 'You got this working!'},
+            {message: 'Amazing job!'}
+          ]
           // We return the object in JSON to the calling point (Our browser).
           res.json(helloWorld)
         })
@@ -188,13 +210,21 @@
         ```
 
         * Now in package.json in the server directory add a scripts section to the package.json:
-          * `"start": "nodemon server.js --exec babel-node"`
+          ```
+          "scripts": {
+            "start": "nodemon server.js --exec babel-node"
+          }
+          ```
           * When you use the command `yarn start` in terminal, this script will run:
             * `nodemon` is keeping a watch for any changes & will automatically restart your server (via server.js) any time you save them.
             * `--exec babel-node` runs babel. Don't really know how it works, but it does.
 
         #### **Check your progress:**
-          * Navigate to the server directory and use `yarn start` to check. If localhost:3001 replies with "{"message":"Hello World!","successRatePercentage":100}" and states something like *this* in your terminal then its good to go:
+          * Navigate to the server directory and use `yarn start` to check. If localhost:3001 replies with:
+          ```
+          [{"message":"Hello World!"},{"message":"This is pretty cool."},{"message":"You got this working!"},{"message":"Amazing job!"}]
+          ```
+          and states something like *this* in your terminal then its good to go:
           ```
           yarn run v1.15.2
           warning ../../../package.json: No license field
@@ -206,7 +236,7 @@
           Listening on 3001
           ```
 
-    * ### Routes (Communication Between Client & Server):
+    * ### The Root Project (Running & Communicating Between Client & Server):
 
 
 
