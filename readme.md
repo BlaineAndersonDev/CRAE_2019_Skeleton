@@ -447,6 +447,22 @@
   * **or**
   * You can continue adding additional packages from this tutorial for a more robust App (More to come soon).
 
+
+##### Planned Tutorials:
+> App Hosting On [Heroku](https://www.heroku.com/):
+
+> Using [Axios]() for more simple but powerful HTTP requests:
+
+> Creating a useful Navbar & Footer:
+
+> Image Hosting On [Cloudinary](https://cloudinary.com/):
+
+> Storing data using [PostgreSQL](https://www.postgresql.org/) & [Knex](https://knexjs.org/):
+
+> Implementing secret variables using [Dotenv](https://github.com/motdotla/dotenv#readme):
+
+> Implementing [Auth0](https://auth0.com/) for secure user information:
+
 <!--
 ### SectionHead:
   * ###### SubSectionHead:
