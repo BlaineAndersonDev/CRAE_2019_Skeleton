@@ -177,13 +177,13 @@
       * If both your browser and terminal are displaying properly then updating the *server* is complete.
 
 ### Client Updates:
-  * For updates to the *client* we will need to: remove git, add a front-end router, update our index.js file and adding a proxy.
+  * For updates to the *client* we will need to: remove git, add a front-end router, update our index.js file & add a proxy.
 
   * ###### Client - Removing Git:
     * For our project, git will be hosted in our *project root* so we will need to remove the automatically generated repository from our *client*:
     * Navigate to your *client* directory in your terminal and enter:
       * `rm -rf .git`
-      * *Note: `rm -rf` is a dangerous command to use without understanding its consequences. In this example, we are removing the directory git is installed in (called .git) so we can initialize git in another directory.*
+      * *Note: `rm -rf` is a dangerous command to use without understanding its consequences. In this example, we are removing the automatically created git directory that is installed (called .git) so we can initialize git in another directory.*
 
   * ###### Client - Adding a front-end router:
     * First we will need to add a basic [react-router-dom](https://reacttraining.com/react-router/) (router) to the frontend, allowing us to effectively navigate through all the [React Components](https://reactjs.org/docs/react-component.html) we might need.
@@ -441,40 +441,16 @@
       * `git commit -m "Initial Commit. Setup Root, Client, & Server directories."`
       * `git push origin master`
 
+### ===> You've Competed The App! <====
+  * At this point, you've created a fully functional **CRAE** stack Application! Congrats!
+  * You can begin adding your own content to the current setup
+  * **or**
+  * You can continue adding additional packages from this tutorial for a more robust App (More to come soon).
 
-
+<!--
 ### SectionHead:
   * ###### SubSectionHead:
   * ###### SubSectionHead:
   * ###### SubSectionHead:
   * ##### **_>>> Check your progress <<<_**
-
-### SectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ##### **_>>> Check your progress <<<_**
-
-### SectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ##### **_>>> Check your progress <<<_**
-
-### SectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ##### **_>>> Check your progress <<<_**
-
-### SectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ##### **_>>> Check your progress <<<_**
-
-### SectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ###### SubSectionHead:
-  * ##### **_>>> Check your progress <<<_**
+-->
