@@ -426,6 +426,7 @@
     * *Note: Github has a suggested list of objects to ignore listed in a gist [here](https://gist.github.com/octocat/9257657). Everything listed in the gist is included in addition to my own file extensions.*
     * *Note: .gitignore tells our git version manager to ignore certain files or directories. This is helpful for online security when working with sensitive data during development that you don't want posted online where other can abuse it.*
 
+
   * ###### Client - Initializing Git:
     * For our project, git will be hosted here, in our *project root*. This allows us to commit changes from both our *client* & our *server* in one place instead of maintaining two separate projects.
     * Navigate to your *project root* directory in your terminal:
