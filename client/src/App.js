@@ -9,7 +9,7 @@ class App extends Component {
 
   async componentDidMount() {
 
-    const response = await fetch('/bob')
+    const response = await fetch('/example')
     .then(response => {
         return response.json()
     });
@@ -19,6 +19,7 @@ class App extends Component {
   };
 
   render() {
+
     return (
       <div>
         <ul>
