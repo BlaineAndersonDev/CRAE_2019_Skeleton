@@ -39,7 +39,8 @@
 *.sql
 *.sqlite
 *node_modules/*
-node_modules/*
+/server/node_modules/*
+/client/node_modules/*
 *node_modules/
 node_modules
 npm-debug.log*
