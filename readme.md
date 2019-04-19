@@ -401,7 +401,7 @@
     *.log
     *.sql
     *.sqlite
-    *node_modules/*
+    node_modules
     npm-debug.log*
     yarn-debug.log*
     yarn-error.log*
