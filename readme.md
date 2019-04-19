@@ -436,6 +436,7 @@
     * Now we need to create a repo on Github to store it in the cloud:
       * *This portion of instruction assumes you've already created a Github account, know how to make a repo & can obtain the HTTP link for it.*
     * After getting the HTTP link for our git repository, we need to add it as a remote repository and commit it to the cloud:
+    * Navigate to your *project root* directory in your terminal:
       * `git remote add origin <Link>`
       * `git add .`
       * `git commit -m "Initial Commit. Setup Root, Client, & Server directories."`
